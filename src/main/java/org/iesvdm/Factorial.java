@@ -2,11 +2,13 @@ package org.iesvdm;
 
 import java.math.BigInteger;
 
-public class Factorial {
 
+public class Factorial {
+    // Atributos
     private long n;
     private BigInteger factorial;
 
+    // G & S
     public long getN() {
         return n;
     }
@@ -23,6 +25,7 @@ public class Factorial {
         this.factorial = factorial;
     }
 
+    // Metodos
     public Factorial(long n) {
         if ( n >= 0)
             this.n = n;
@@ -32,7 +35,14 @@ public class Factorial {
 
     public BigInteger calcula() {
         //TODO
-        return null;
-    }
+        this.factorial = BigInteger.ONE;
 
+        for (long i = 2; i <= n; i++) {
+            //System.out.println("Factorial de" + i);
+            this.factorial = this.factorial.multiply(BigInteger.valueOf(i));
+            //System.out.println(this.factorial);
+        }
+
+        return this.factorial;
+    }
 }

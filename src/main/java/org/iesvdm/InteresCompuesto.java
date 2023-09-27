@@ -1,23 +1,26 @@
 package org.iesvdm;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class InteresCompuesto {
 
+    //ATRIBUTOS
     private BigDecimal p;
     private BigDecimal r;
     private int n;
     private BigDecimal c;
+
+    // CONSTRUCTOR
+    public InteresCompuesto(){};
 
     public InteresCompuesto(BigDecimal p, BigDecimal r, int n) {
         this.p = p;
         this.r = r;
         this.n = n;
     }
-
-    public BigDecimal getP() {
-        return p;
-    }
+    // G & S
+    public BigDecimal getP() { return p; }
 
     public void setP(BigDecimal p) {
         this.p = p;
@@ -47,11 +50,19 @@ public class InteresCompuesto {
         this.c = c;
     }
 
+
+    // METODOS
     public BigDecimal calculaMontoFinal() {
         //TODO
-        return null;
-    }
+        BigDecimal p = getP();
+        BigDecimal c = getC();
+        int n = getN();
+        BigDecimal r = getR();
 
+        c = p.multiply(BigDecimal.ONE.add(r.divide(BigDecimal.valueOf(100),3, RoundingMode.HALF_UP)).pow((n)));
+
+        return c;
+    }
 
 
 }

@@ -1,6 +1,5 @@
 package org.iesvdm;
 
-import org.iesvdm.InteresCompuesto;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -17,10 +16,16 @@ public class InteresCompuestoTest {
         int periodos = 10;
 
         //TODO
-        InteresCompuesto interesCompuesto = null;
-        BigDecimal cantidadFinal = null;
+
+        InteresCompuesto interesCompuesto = new InteresCompuesto();
+        interesCompuesto.setP(new BigDecimal(principal));
+        interesCompuesto.setR(new BigDecimal((interes)));
+        interesCompuesto.setN(periodos);
+
+        BigDecimal cantidadFinal = interesCompuesto.calculaMontoFinal().setScale(2, RoundingMode.HALF_UP);
 
         Assertions.assertEquals(new BigDecimal("1628.89"), cantidadFinal);
+
     }
 
 }
