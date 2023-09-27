@@ -19,7 +19,7 @@ public class InteresCompuestoTest {
 
         InteresCompuesto interesCompuesto = new InteresCompuesto();
         interesCompuesto.setP(new BigDecimal(principal));
-        interesCompuesto.setR(new BigDecimal((interes)));
+        interesCompuesto.setR(new BigDecimal(interes));
         interesCompuesto.setN(periodos);
 
         BigDecimal cantidadFinal = interesCompuesto.calculaMontoFinal().setScale(2, RoundingMode.HALF_UP);

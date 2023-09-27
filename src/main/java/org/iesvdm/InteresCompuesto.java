@@ -6,48 +6,48 @@ import java.math.RoundingMode;
 public class InteresCompuesto {
 
     //ATRIBUTOS
-    private BigDecimal p;
-    private BigDecimal r;
-    private int n;
-    private BigDecimal c;
+    private BigDecimal principal;
+    private BigDecimal rate;
+    private int nPeriodos;
+    private BigDecimal capital;
 
     // CONSTRUCTOR
     public InteresCompuesto(){};
 
     public InteresCompuesto(BigDecimal p, BigDecimal r, int n) {
-        this.p = p;
-        this.r = r;
-        this.n = n;
+        this.principal = p;
+        this.rate = r;
+        this.nPeriodos = n;
     }
     // G & S
-    public BigDecimal getP() { return p; }
+    public BigDecimal getP() { return principal; }
 
     public void setP(BigDecimal p) {
-        this.p = p;
+        this.principal = p;
     }
 
     public BigDecimal getR() {
-        return r;
+        return rate;
     }
 
     public void setR(BigDecimal r) {
-        this.r = r;
+        this.rate = r;
     }
 
     public int getN() {
-        return n;
+        return nPeriodos;
     }
 
     public void setN(int n) {
-        this.n = n;
+        this.nPeriodos = n;
     }
 
     public BigDecimal getC() {
-        return c;
+        return capital;
     }
 
     public void setC(BigDecimal c) {
-        this.c = c;
+        this.capital = c;
     }
 
 
