@@ -29,11 +29,11 @@ public class LineItem {
         this.Price = producto.getPrecio();
         this.shoppingCart = this.getOrder().getAccount().getShoppingCart();
         // actualiza datos
-        producto.setStock(producto.getStock()- this.getQuantity());  // actualiza el stock de productos
-        this.getOrder().getAccount().getShoppingCart().getListaItem().add(this); // actualiza el carrito
-        this.getOrder().getMyLines().add(this);                      // actualiza el Order
-        this.subtotal = this.getPrice().multiply(new BigDecimal(this.quantity));  //Actualiza subtotal
-        this.getOrder().setTotal(this.subtotal);   // actualiza el total del Order
+        producto.setStock(producto.getStock()- this.getQuantity());                 // actualiza el stock de productos
+        this.getOrder().getAccount().getShoppingCart().getListaItem().add(this);    // actualiza el carrito
+        this.getOrder().getMyLines().add(this);                                     // actualiza el Order
+        this.subtotal = this.getPrice().multiply(new BigDecimal(this.quantity));    // actualiza el subtotal de la linea
+        this.getOrder().setTotal(this.subtotal);                                    // actualiza el total del Order
 
 
     }

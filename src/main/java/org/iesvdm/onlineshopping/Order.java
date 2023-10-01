@@ -59,7 +59,7 @@ public class Order {
 
     public BigDecimal getTotal() { return total;    }
 
-    public void setTotal(BigDecimal subtotal) { this.total.add(subtotal);  }
+    public void setTotal(BigDecimal subtotal) { this.total = this.total.add(subtotal);  }
 
     public Set<LineItem> getMyLines() { return myLines;    }
 
